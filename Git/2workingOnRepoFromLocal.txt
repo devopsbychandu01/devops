@@ -1,0 +1,20 @@
+git init
+
+git add .
+git add -A
+git add file1 file2
+
+git status
+
+git commit -m "commit message"
+
+git log
+git log --oneline
+
+git remote -v
+
+git show <commitID>
+
+git remote add origin <url>
+
+git push origin master

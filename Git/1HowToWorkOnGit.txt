@@ -1,0 +1,4 @@
+Git config --global user.name "Chandra sekhar"
+Git config --global user.email devopsbychandu3@gmail.com
+
+

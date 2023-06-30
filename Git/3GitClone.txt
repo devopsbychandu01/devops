@@ -1,0 +1,2 @@
+git clone <url>
+cd ./<directory>

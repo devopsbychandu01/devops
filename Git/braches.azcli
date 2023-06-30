@@ -1,0 +1,12 @@
+#check all local branches
+git branch
+#check all (local & remote) branches
+git branch -a
+#create branch
+git branch <branchName>
+# checkout branch
+git checkout <branchName>
+# create as well checkout branch
+git checkout -b <branchName>
+#rename branch
+git branch -m <oldBranchName> <newbrachName>
