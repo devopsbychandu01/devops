@@ -1,0 +1,40 @@
+git branch dev
+git merge dev
+(or)
+git merge <soruce Branch> <destination Branch>
+
+
+## merge conflicts
+vi file.txt --> add some context
+git add .
+git commit -m "some valut on the file"
+git checkout dev
+vi file.txt --> add some context on the same lines
+git add .
+git commit -m "commit message"
+git checkout master
+git merge dev
+(or)
+git merge master dev
+# --> will get conflicts
+edit the conflict file
+git add .
+git commit -m "conflicts resolved"
+git push origin master
+
+#git rebase
+touch file1
+git add .
+git commit -m "rebase1"
+
+touch file2
+git add .
+git commit -m "rebase2"
+
+touch file3
+git add .
+git commit -m "rebase3"
+
+git checkout dev
+git rebase master
+

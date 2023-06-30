@@ -1,8 +1,10 @@
 git init
+echo "hello world" > hello.txt
+touch file1
 
 git add .
 git add -A
-git add file1 file2
+git add file1 hello.txt
 
 git status
 

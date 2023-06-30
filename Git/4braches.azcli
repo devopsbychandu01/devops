@@ -10,3 +10,11 @@ git checkout <branchName>
 git checkout -b <branchName>
 #rename branch
 git branch -m <oldBranchName> <newbrachName>
+#delete branch 
+git branch -D <branchName>
+
+# switch to previous branch
+git checkout -
+
+#delete remote branch
+git push origin --delete <branch Name>
