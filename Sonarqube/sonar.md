@@ -5,8 +5,12 @@ java -version
 #install maven
 cd /opt wget https://dlcdn.apache.org/maven/maven-3/3.9.3/binaries/apache-maven-3.9.3-bin.tar.gz
 tar -xvf <>
-echo "export M3_HOME="/opt/apache-maven-3.9.3"
-export PATH=$M3_HOME/bin:$PATH" > /etc/profile.d/maven.sh
+# update /etc/profile.d/maven.sh file with the following information
+vi /etc/profile.d/maven.sh
+
+export M3_HOME="/opt/apache-maven-3.9.3"
+export PATH=$M3_HOME/bin:$PATH"
+
 source /etc/profile.d/maven.sh
 mvn --version
 
