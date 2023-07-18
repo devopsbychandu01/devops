@@ -1,0 +1,42 @@
+docker --version
+service docker status
+systemctl status docker
+
+docker search ubuntu
+docker pull ubuntu
+docker pull ubuntu:latest
+docker images
+docker pull ubuntu:focal
+docker images -a
+docker images -q
+docker images -aq
+
+docker rmi ubuntu:focal
+
+docker image tag ubuntu:latest myapp:v1
+docker images
+
+
+FROM ubuntu
+RUN apt update
+RUN apt install apache2 -y
+RUN apt install apache2-utils -y
+RUN apt clean
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+
+
+docker build -t apache2:v1 .
+
+docker run -it 2c121712765a
+docker run -itd 2c121712765a
+docker ps
+docker ps -a
+docker ps -qa
+
+
+
+docker-compose -f docker-compose.yaml config
+
+
+

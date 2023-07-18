@@ -1,0 +1,26 @@
+docker network create mongodb-net
+
+docker run -d \
+    -p 27017:27017 \
+    -e MONGO_INITDB_ROOT_USERNAME=admin \
+    -e MONGO_INITDB_ROOT_PASSWORD=password \
+    --net mongodb-net \
+    --name mongodb \
+    mongo
+
+docker run -d \
+    -p 8081:8081 \
+    -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin \
+    -e ME_CONFIG_MONGODB_ADMINPASSWORD=password \
+    -e ME_CONFIG_MONGODB_SERVER=mongodb \
+    --net mongodb-net \
+    --name mongo-express \
+    mongo-express
+
+
+docker-compose -f <fileName> up
+
+docker-compose -f <fileName> down
+
+
+docker-compose -f docker-compose.yml config

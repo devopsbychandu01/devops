@@ -1,0 +1,10 @@
+az login
+az account set -s "subscription1"
+az account show
+
+az aks get-credentials --resource-group dev --name devakscluster --overwrite-existing
+
+kubectl config view
+kubectl config get-contexts
+kubectl get nodes
+kubectl get nodes -o wide
