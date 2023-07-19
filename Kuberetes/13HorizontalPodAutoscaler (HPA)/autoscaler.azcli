@@ -1,0 +1,19 @@
+kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+kubectl get hpa
+
+##Increase the load
+kubectl run -i --tty load-generator --rm --image=busybox:1.28 --restart=Never -- /bin/sh -c "while sleep 0.01; do wget -q -O- http://php-apache; done"
+
+##Now run
+kubectl get hpa php-apache --watch
+
+## CPU will increase as a result lot of replicas will come.
+kubectl get deployment php-apache
+
+## stop the load using the ctrl+c then load will decrease.
+kubectl get hpa php-apache --watch
+
+kubectl get deployment php-apache
+
+## you can delete the hpa using follwoing command.
+kubectl delete hpa php-apache
