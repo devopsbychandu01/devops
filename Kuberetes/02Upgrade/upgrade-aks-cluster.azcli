@@ -1,0 +1,36 @@
+az login
+az account set -s "subscription1"
+az account show
+
+rgname="dev"
+clustername="devcluster"
+
+## get upgrades
+az aks get-upgrades --resource-group $rgname --name $clustername --output table
+
+## upgrade the AKS cluster both control plan and nodes at a time
+az aks upgrade \
+    --resource-group $rgname \
+    --name $clustername \
+    --kubernetes-version KUBERNETES_VERSION
+
+##  check the AKS cluster upgrade status.
+az aks show --resource-group $rgname --name $clustername --output table
+
+
+## upgrade only control-plane
+az aks upgrade \
+   --resource-group $rgname \
+   --name $clustername \
+   --control-plane-only \
+   --no-wait \
+   --kubernetes-version <KubernetesVersion>
+
+
+## upgrade a specific node pool
+az aks nodepool upgrade \
+   --resource-group $rgname \
+   --cluster-name $clustername \
+   --name <NodePoolName> \
+   --no-wait \
+   --kubernetes-version <KubernetesVersion>

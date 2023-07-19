@@ -1,0 +1,3 @@
+kubectl create -f pod.yml
+(or)
+kubectl apply -f pod.yml
