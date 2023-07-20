@@ -1,0 +1,3 @@
+kubectl get nodes
+kubectl label nodes <nodename> capacity=high-cpu
+kubectl label nodes <nodename> capacity=high-memory

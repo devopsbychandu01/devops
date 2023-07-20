@@ -1,0 +1,11 @@
+# create 1 replica antiaffinity pod
+kubectl apply -f 01podantifaffinity.yml
+
+# later increase the replica the pod should create in both nodes.
+
+# apply pod affinity it will run all the pods are in same nodes
+
+## now lable the node using following command.
+kubectl label nodes <nodename> capacity=high-memory
+
+#then apply the pod affinity, the pod should be present on the one node.
