@@ -1,0 +1,27 @@
+
+# create application and services withot ingress
+kubectl apply -f ./03IngressWithSsl/01deploy.yml -n ingress-basic
+kubectl apply -f ./03IngressWithSsl/02deploy.yml -n ingress-basic
+
+# create certificate
+openssl genrsa -des3 -out serer.key 2048
+openssl req -new -key serer.key -out server.csr
+openssl x509 -req -days 365 -in server.csr -signkey serer.key -out server.crt
+
+## go to website https://www.base64encode.org/ and copy your cert and keys values and get the base64 encoded values
+## use the base 64 encoded value and update them in the secret file.
+
+# create certificate and ingress
+kubectl apply -f ./03IngressWithSsl/03secret.yml -n ingress-basic
+kubectl apply -f ./03IngressWithSsl/04ingress.yml -n ingress-basic
+
+# check your deployments and all other components
+kubectl get all -n ingress-basic
+
+## test your application ##
+
+## delete the application ##
+kubectl delete -f ./03IngressWithSsl/01deploy.yml -n ingress-basic
+kubectl delete -f ./03IngressWithSsl/02deploy.yml -n ingress-basic
+kubectl delete -f ./03IngressWithSsl/03secret.yml -n ingress-basic
+kubectl delete -f ./03IngressWithSsl/04ingress.yml -n ingress-basic

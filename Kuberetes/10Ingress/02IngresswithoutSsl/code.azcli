@@ -1,0 +1,15 @@
+
+# create application and services withot ingress
+kubectl apply -f ./02IngresswithoutSsl/01deploy.yml -n ingress-basic
+kubectl apply -f ./02IngresswithoutSsl/02deploy.yml -n ingress-basic
+kubectl apply -f ./02IngresswithoutSsl/03ingress.yml -n ingress-basic
+
+# check your deployments and all other components
+kubectl get all -n ingress-basic
+
+## test your application ##
+
+## delete the application ##
+kubectl delete -f ./02IngresswithoutSsl/01deploy.yml -n ingress-basic
+kubectl delete -f ./02IngresswithoutSsl/02deploy.yml -n ingress-basic
+kubectl delete -f ./02IngresswithoutSsl/03ingress.yml -n ingress-basic

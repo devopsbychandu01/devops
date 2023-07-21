@@ -1,0 +1,33 @@
+## docs
+https://helm.sh/docs/intro/install/
+https://learn.microsoft.com/en-us/azure/aks/ingress-basic?tabs=azure-cli
+
+
+## install the helm
+curl https://baltocdn.com/helm/signing.asc | gpg --dearmor | sudo tee /usr/share/keyrings/helm.gpg > /dev/null
+sudo apt-get install apt-transport-https --yes
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.gpg] https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update
+sudo apt-get install helm
+
+## install ingress-controller nginx
+NAMESPACE=ingress-basic
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+  --create-namespace \
+  --namespace $NAMESPACE \
+  --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz
+
+# create application and services withot ingress
+kubectl apply -f ./loadbalancer/01deploy.yml -n ingress-basic
+kubectl apply -f ./loadbalancer/02deploy.yml -n ingress-basic
+
+# check your deployments and all other components
+kubectl get all -n ingress-basic
+
+## test your application ##
+
+## delete the application ##
+kubectl delete -f ./loadbalancer/01deploy.yml -n ingress-basic
+kubectl delete -f ./loadbalancer/02deploy.yml -n ingress-basic

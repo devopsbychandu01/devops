@@ -1,0 +1,21 @@
+# create application and services withot ingress
+kubectl apply -f ./04IngressWithSslCert-manager/01deploy.yml -n ingress-basic
+kubectl apply -f ./04IngressWithSslCert-manager/02deploy.yml -n ingress-basic
+
+## run the following commands
+kubectl label namespace ingress-basic cert-manager.io/disable-validation=true
+helm repo add jetstack https://charts.jetstack.io
+helm repo update
+
+# apply the CRD (Custom resource definition)
+kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.12.0/cert-manager.crds.yaml
+
+## install the cert manager
+helm install \
+  cert-manager jetstack/cert-manager \
+  --namespace ingress-basic \
+  --version v1.12.0
+
+## run cluster issuer and ingress using following commands.
+kubectl apply -f ./04IngressWithSslCert-manager/03cluster-issuer.yml -n ingress-basic
+kubectl apply -f ./04IngressWithSslCert-manager/04finalingress.yml -n ingress-basic
