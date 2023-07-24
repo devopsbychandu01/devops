@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - image: mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine
+    name: mypod
+    volumeMounts:
+      - name: emptydir
+        mountPath: /mnt/emptydir
+  volumes:
+  - name: emptydir
+    emptyDir: {}

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mypod
+spec:
+  containers:
+  - image: mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine
+    name: mypod
+    volumeMounts:
+      - name: volume
+        mountPath: /mnt/volume
+  volumes:
+  - name: volume
+    azureDisk:
+      kind: Managed
+      diskName: devdisk01
+      diskURI: /subscriptions/eed27f33-cd8b-4dda-a7fb-4616d20c3ac9/resourcegroups/dev/providers/Microsoft.Compute/disks/devdisk01

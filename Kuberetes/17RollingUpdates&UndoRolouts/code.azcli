@@ -1,0 +1,13 @@
+kubectl apply -f deployment1.yml --record=true
+kubectl rollout status deployment rollout
+
+## check this in the brouser.
+kubectl get svc -n dev
+kubectl apply -f deployment2.yml --record=true
+kubectl rollout status deployment rollout
+
+kubectl rollout history deployment rollout
+
+kubectl rollout undo deployment rollout 
+
+kubectl rollout undo deployment rollout --to-revision=1
