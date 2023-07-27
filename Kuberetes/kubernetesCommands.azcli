@@ -3,3 +3,7 @@ az aks get-credentials --resource-group dev --name devcluster --overwrite-existi
 kubectl get nodes
 kubectl get nodes -o wide
 kubectl get pods -A -o wide
+
+
+
+### https://kubernetes.io/docs/reference/access-authn-authz/rbac/

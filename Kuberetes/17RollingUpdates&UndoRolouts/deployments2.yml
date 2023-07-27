@@ -12,14 +12,14 @@ spec:
       maxUnavailable: 25%
   selector:
     matchLabels:
-      app: nodeapp
+      app: rollout
   template:
     metadata:
       labels:
-        app: nodeapp
+        app: rollout
     spec:
       containers:
       - image: kammana/nodeapp:v2
-        name: nodeapp
+        name: rollout
         ports:
         - containerPort: 8080

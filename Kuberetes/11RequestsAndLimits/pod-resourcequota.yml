@@ -5,7 +5,7 @@ metadata:
 spec:
   containers:
   - name: app
-    image: images.my-company.example/app:v4
+    image: nginx:latest
     resources:
       requests:
         memory: "64Mi"
@@ -14,7 +14,7 @@ spec:
         memory: "128Mi"
         cpu: "500m"
   - name: log-aggregator
-    image: images.my-company.example/log-aggregator:v6
+    image: nginx:latest
     resources:
       requests:
         memory: "64Mi"

@@ -11,4 +11,4 @@ spec:
           containerPort: 80
           protocol: TCP
   nodeSelector:
-    capacity: high-cpu
+    capacity: high-memory

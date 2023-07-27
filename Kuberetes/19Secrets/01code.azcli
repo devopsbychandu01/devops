@@ -1,0 +1,22 @@
+## Opaque secrets 
+
+kubectl create secret generic empty-secret
+kubectl get secret empty-secret
+
+## service account secrets
+kubectl create -f 02serviceaccoutSecrets.yml
+
+## basicAuthentication
+kubectl apply -f 03basicAutherntication.yml
+
+##  ssh Authentication
+kubectl apply -f 04sshauthetication.yml
+
+## TLS secrets
+kubectl apply -f 05tlsSecrets.yml
+(or)
+kubectl create secret tls my-tls-secret \
+  --cert=path/to/cert/file \
+  --key=path/to/key/file
+
+  

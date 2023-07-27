@@ -1,0 +1,4 @@
+SERVICE_ACCOUNT_NAME="demo"
+NAMESPACE="default"
+KUBECONFIG_FILE_NAME="./ServiceAccount/kubeconfig-$(SERVICE_ACCOUNT_NAME)-$(NAMESPACE)-conf"
+TARGET_FOLDER="./ServiceAccount/Conf"
