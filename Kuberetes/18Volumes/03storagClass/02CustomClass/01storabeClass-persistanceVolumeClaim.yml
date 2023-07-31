@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: azure-managed-disk
+  name: customclasspvc
 spec:
   accessModes:
   - ReadWriteOnce
-  storageClassName: azurefile1
+  storageClassName: customclass
   resources:
     requests:
       storage: 5Gi

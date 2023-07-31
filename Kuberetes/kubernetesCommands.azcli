@@ -7,3 +7,6 @@ kubectl get pods -A -o wide
 
 
 ### https://kubernetes.io/docs/reference/access-authn-authz/rbac/
+
+
+Azure Kubernetes Service Cluster User Role

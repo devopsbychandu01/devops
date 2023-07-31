@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: azure-managed-disk
+  name: azure-premium-disk
 spec:
   accessModes:
   - ReadWriteOnce

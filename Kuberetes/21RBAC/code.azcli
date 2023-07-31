@@ -1,0 +1,51 @@
+### https://learn.microsoft.com/en-us/azure/aks/azure-ad-rbac?tabs=portal ###
+
+az aks update -g test -n testcluster --enable-aad --aad-admin-group-object-ids d63f3e80-c783-4cee-a05e-a124b45058bc --aad-tenant-id b1f0c119-8d8d-4dcd-aff5-ce30199f40ad
+
+## AKS ID ##
+AKS_ID=$(az aks show \
+    --resource-group test \
+    --name testcluster \
+    --query id -o tsv)
+
+# create first AD group.
+APPDEV_ID=$(az ad group create --display-name appdev --mail-nickname appdev --query Id -o tsv)
+
+APPDEV_ID="396bc686-f09b-45c5-8f44-53b5861faa51"
+
+## create role assignment.
+az role assignment create \
+  --assignee $APPDEV_ID \
+  --role "Azure Kubernetes Service Cluster User Role" \
+  --scope $AKS_ID
+
+## create second group 
+OPSSRE_ID=$(az ad group create --display-name opssre --mail-nickname opssre --query objectId -o tsv)
+OPSSRE_ID="0758247e-c205-454a-bc16-b904d24365d1"
+
+## role assignemnt for second group.
+az role assignment create \
+  --assignee $OPSSRE_ID \
+  --role "Azure Kubernetes Service Cluster User Role" \
+  --scope $AKS_ID
+
+## create user1, and login the user and set the account also update the user to the group1
+
+## create user2, and login the user and set the account also update the user to the group1
+
+
+az aks get-credentials --resource-group dev --name devcluster --admin
+kubectl create namespace dev
+
+kubectl get roles -n dev
+
+
+az aks get-credentials --resource-group myResourceGroup --name myAKSCluster --overwrite-existing
+kubectl run nginx-dev --image=mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine --namespace dev
+
+kubectl run nginx-dev --image=mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine --namespace dev
+kubectl get pods --namespace dev
+
+kubectl get pods --all-namespaces
+
+

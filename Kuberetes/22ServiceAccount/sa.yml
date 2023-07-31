@@ -1,4 +1,6 @@
+# spinnaker-service-account.yml
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: svcs-acct-dply #any name you'd like
+  name: spinnaker-service-account
+  namespace: spinnaker
