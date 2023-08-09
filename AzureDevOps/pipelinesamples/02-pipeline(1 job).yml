@@ -1,0 +1,22 @@
+name: name
+trigger: 
+  branches:
+    include:
+      - master
+pool:
+  name: poolname
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'test'
+  - task: DotNetCoreCLI@2
+    inputs:
+      command: 'build'
+      arguments: '--configuration $(buildConfiguration)'
+  - task: Docker@2
+    inputs:
+      command: 'buildAndPush'
+      Dockerfile: '**/Dockerfile'

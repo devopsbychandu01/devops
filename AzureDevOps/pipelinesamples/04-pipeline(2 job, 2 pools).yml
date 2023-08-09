@@ -1,0 +1,24 @@
+name: name
+trigger: 
+  branches:
+    include:
+      - master
+variables:
+  buildConfiguration: 'Release'
+jobs:
+  - job: Test and Build
+    pool:
+      name: poolname1
+    steps:
+      - script: dotnet test
+        displayName: build unit test cases
+      - script: dotnet build --configurations $(buildConfiguration)
+        displayName: build the dotnet applicaiton
+  - job: docker image build and push
+    pool:
+      name: poolname2
+    steps:
+      - script: docker build -t myapp:v1
+        displayName: building the docker images
+      - script: docker push myapp:v1
+        displayName: push the docker image

@@ -1,0 +1,40 @@
+name: Build and Deploy
+
+variables:
+  system.debug: true
+
+trigger:
+  branches:
+    include:
+      - master
+    exclude:
+      - feature/*
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: BuildAzurePipeline
+    displayName: BuildAzurePipeline
+    jobs:
+      - job: Build
+        displayName: BuildAzurePipeline
+        steps:
+          - checkout: self
+            persistCredentials: true
+            clean: true
+          - task: PublishPipelineArtifact@1
+            inputs:
+              targetPath: ${system.DefaultWorkingDirectory}
+              artifact: terraformbuildArtifact
+  - stage: DownloadArtifact
+    displayName: downloadArtifact
+    jobs:
+      - job: Download
+        displayName: downloadArtifact
+        steps:
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              artifactName: terraformbuildArtifact
+              buildVersionToDownload: latest
+              downloadPath: ${system.DefaultWorkingDirectory}

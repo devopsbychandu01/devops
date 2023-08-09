@@ -1,0 +1,55 @@
+name: name
+variables:
+  buildConfiguration: 'Release'
+  dockerHostName: abce.acr.net
+  username: devops
+stages:
+  - stage: build
+    jobs:
+      - job: test and build
+        pool:
+          name: ubuntu
+        steps:
+          - script: dotnet test
+            displayName: unit testing
+          - script: dotnet build --configuration $(buildConfiguration)
+      - job: docker build and push
+        pool:
+          name: ubuntu
+        steps:
+          - script: docker build -t myapp:v1 .
+            displayName: building docker image
+          - script: docker login $(dockerHostName) -u $(username)
+            displayName: login to the ACR
+          - script: docker push myapp:v1
+            displayName: push the docker image
+  - stage: deploy to developement
+    jobs:
+      - job: deploy the application
+        pool:
+          name: ubuntu
+        steps:
+          - script: export KUBECONFIG=<configmap Path>
+            displayName: login to the cluster
+          - script: kubectl apply -f <deply ymlfile path>
+            displayName: disploying the applicaiotn
+  - stage: deploy to test
+    jobs:
+      - job: deploy the test
+        pool:
+          name: ubuntu
+        steps:
+          - script: export KUBECONFIG=<configmap Path>
+            displayName: login to the cluster
+          - script: kubectl apply -f <deply ymlfile path>
+            displayName: disploying the applicaiotn
+  - stage: deploy to prod
+    jobs:
+      - job: deploy the prod
+        pool:
+          name: ubuntu
+        steps:
+          - script: export KUBECONFIG=<configmap Path>
+            displayName: login to the cluster
+          - script: kubectl apply -f <deply ymlfile path>
+            displayName: disploying the applicaiotn
