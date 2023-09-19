@@ -1,7 +1,0 @@
-git clone <url>
-cd ./<directory>
-
-git pull origin master
-
-git fetch origin master
-git checkout

@@ -17,4 +17,3 @@ steps:
     displayName: build image
   - script: docker push myapp:v1
     displayName: push image
-  

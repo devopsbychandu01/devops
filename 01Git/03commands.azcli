@@ -1,0 +1,40 @@
+# git init
+git init
+
+
+# git add
+git add .
+git add -A
+
+# git status
+git status
+
+# commit
+git commit -m "commit message"
+
+# log
+git log
+git log --oneline
+
+# remote
+git remote -v
+git remote add origin <url>
+
+# git show
+git show <commitID>
+
+# git push
+git push origin master
+
+
+# pull
+git pull origin master
+
+# fetch
+git fetch
+
+# merge
+git merge
+
+# git clone 
+git clone <url>

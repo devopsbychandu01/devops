@@ -1,0 +1,9 @@
+git config --local user.name "Chandra sekhar"
+git config --local user.email abcd@gmail.com
+
+
+git config --system user.name "Chandra sekhar"
+git config --system user.email abcd@gmail.com
+
+git config --global user.name "Chandra sekhar"
+git config --global user.email abcd@gmail.com
