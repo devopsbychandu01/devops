@@ -7,5 +7,3 @@ git config --system user.email abcd@gmail.com
 
 git config --global user.name "Chandra sekhar"
 git config --global user.email abcd@gmail.com
-
-hello

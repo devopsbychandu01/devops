@@ -29,6 +29,9 @@ git status
 git Stash
 git status
 git stash list
+
+
+
 ## number 0 is the recent stash info ##
 
 

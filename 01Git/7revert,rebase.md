@@ -1,13 +1,15 @@
-Vi food.txt --> samosa
-Git commit –am “samosa”
-Vi food.txt --> pizza
-Git commit –am “pizza”
-Vi food.txt --> chicken
-Git commit –am “chicken”
-git log --oneline     get the commit id
-git revert <commitID>
-## In revert both previous commit and reverted commit also will be present
+### reset ###
+git reset <previous Commit>
+
+# git mixed reset
+git reset --mixed <previous commit ID>
+
+# git soft reset
+git reset --soft <previous commit ID>
+
+# git hard reset
+git reset --hard <previous commit ID>
 
 
-git reset <which commit you want to go>
-git reset --hard <which commit you want to go>
+### revert ###
+git revert <commit ID>
