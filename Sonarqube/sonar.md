@@ -1,15 +1,18 @@
+## update os
+apt-get update
+
 ## install java 11
 sudo apt-get install openjdk-11-jdk -y
 java -version
 
 #install maven
-cd /opt wget https://dlcdn.apache.org/maven/maven-3/3.9.3/binaries/apache-maven-3.9.3-bin.tar.gz
-tar -xvf <>
+cd /opt && wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+tar -xvf apache-maven-3.9.4-bin.tar.gz
 # update /etc/profile.d/maven.sh file with the following information
 vi /etc/profile.d/maven.sh
 
-export M3_HOME="/opt/apache-maven-3.9.3"
-export PATH=$M3_HOME/bin:$PATH"
+export M3_HOME="/opt/apache-maven-3.9.4"
+export PATH=$M3_HOME/bin:$PATH
 
 source /etc/profile.d/maven.sh
 mvn --version
@@ -21,6 +24,7 @@ wget -q https://www.postgresql.org/media/keys/ACCC4CF8.asc -O - | sudo apt-key a
 apt install postgresql postgresql-contrib -y
 systemctl enable postgresql
 systemctl start postgresql
+systemctl status postgresql
 passwd postgres
 su - postgres
 createuser sonar
