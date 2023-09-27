@@ -3,7 +3,6 @@
 3) vi /etc/ssh/sshd_config
 
 permitRootLogin prohibited-password     --> has to be uncomment
-passwordlessAuthentication --> should be yes
 
 systemctl restart sshd
 systemctl restart ssh
@@ -41,16 +40,22 @@ edit authorized_keys and update second server public keys.
 
 
 ##Ansible install
-apt-get update -yes
+apt-get update
 apt-get install ansible
+ansible --version
+which ansible
 
 vi /etc/ansible/hosts
 [webserver]
 <publickIP> ansible_ssh_user=root ansible_ssh_pass=<rootpassword>
 
-webservers
+## 20.119.249.62 ansible_ssh_user=root ansible_ssh_pass=India@123456 ##
+
+
 
 # write the file
 ansible-playbook <filename> --syntax-check
+
+apt-get install sshpass
 
 ansible-playbook <file>
