@@ -1,0 +1,18 @@
+docker network ls
+docker network inspect <networkID>
+docker network create <networkName> --subnet 10.0.0.0/24
+## run a container on a specific network ##
+docker run -itd -p hostport:containerPort --network <networkName> imgeid
+docker run -itd --name demo1 alpine sh
+docker run -itd --name demo2 alpine sh
+
+Docker network inspect bridge ## we can see all the 2 containers are available
+Docker attach demo1
+Ping the another container ip.
+Same do the vise versa.
+
+Docker run -itd --name --network <networkName> demo3 alpine sh
+Docker run -itd --name demo4 --network <networkName> alpine sh
+
+
+
