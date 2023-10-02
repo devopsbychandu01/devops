@@ -1,10 +1,26 @@
+git clone https://github.com/devopsbychandu01/docker-templates.git
+cd docker-templates/05-JAVA/Maven/
+docker build -t app:v1 .
+docker images
+docker run -itd app:v1
+docker ps
+docker inspect <containerID>
+docker inspect <containerID> | grep "IPAddress"
+
+
 docker network ls
 docker network inspect <networkID>
-docker network create <networkName> --subnet 10.0.0.0/24
+
+
+docker network create mynetwork --subnet 10.0.0.0/24
+docker network ls
+
 ## run a container on a specific network ##
 docker run -itd -p hostport:containerPort --network <networkName> imgeid
-docker run -itd --name demo1 alpine sh
-docker run -itd --name demo2 alpine sh
+docker run -itd -p hostport:containerPort --network <networkName> imgeid
+docker run -itd --name demo1 --network mynetwork alpine sh
+docker run -itd --name demo2 --network mynetwork alpine sh
+## get the Ip addresses of the containers and do the ping test
 
 Docker network inspect bridge ## we can see all the 2 containers are available
 Docker attach demo1
@@ -13,6 +29,3 @@ Same do the vise versa.
 
 Docker run -itd --name --network <networkName> demo3 alpine sh
 Docker run -itd --name demo4 --network <networkName> alpine sh
-
-
-

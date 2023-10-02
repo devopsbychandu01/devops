@@ -1,7 +1,11 @@
 Docker volume ls
-Docker volume create <volumeName>
-Docker volume inspect <VolumeName>
+## named volumes
+docker volume create <volumeName>
+docker volume inspect <VolumeName>
+## named volumes
 docker run -d --name devtest -v myvol2:/app nginx:latest
 docker run -d --name=nginxtest -v nginx-vol:/usr/share/nginx/html nginx:latest
-Docker run –d --name=demo -v /opt/demo:/usr/share/nginx/html nginx:latest
+## host volumes
+docker run -d --name=nginxtests --mount source=nginx-vol,destination=/usr/share/nginx/html nginx:latest
+## create annonimous volumes
 docker run -d --name=nginxtest -v /usr/share/nginx/html nginx:latest
