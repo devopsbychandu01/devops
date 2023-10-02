@@ -12,14 +12,14 @@ docker network ls
 docker network inspect <networkID>
 
 
-docker network create mynetwork --subnet 10.0.0.0/24
+docker network create mynetwork --subnet 10.0.0.0/27
 docker network ls
 
 ## run a container on a specific network ##
 docker run -itd -p hostport:containerPort --network <networkName> imgeid
 docker run -itd -p hostport:containerPort --network <networkName> imgeid
-docker run -itd --name demo1 --network mynetwork alpine sh
-docker run -itd --name demo2 --network mynetwork alpine sh
+docker run -itd --name demo3 --network mynetwork alpine sh
+docker run -itd --name demo4 --network mynetwork alpine sh
 ## get the Ip addresses of the containers and do the ping test
 
 Docker network inspect bridge ## we can see all the 2 containers are available
