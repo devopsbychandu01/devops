@@ -1,0 +1,23 @@
+az login
+az account set -s "subscription1"
+az account show
+
+az aks get-credentials --resource-group dev --name devakscluster --overwrite-existing
+
+kubectl config view
+kubectl config get-contexts
+kubectl get nodes
+kubectl get nodes -o wide
+
+# Attach using acr-name
+# az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-name>
+
+# Attach using acr-resource-id
+az aks update -n devakscluster -g dev --attach-acr devacr8967
+
+
+# Detach using acr-name
+az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-name>
+
+# Detach using acr-resource-id
+az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>
