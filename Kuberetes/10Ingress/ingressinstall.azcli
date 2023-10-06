@@ -1,0 +1,31 @@
+# Install Chocolatey
+
+# https://chocolatey.org/install
+# Open powershell with run admin
+# run following command to check the execution policy.
+Get-ExecutionPolicy
+# if it returned Restricted. Then run the following commands.
+Set-ExecutionPolicy AllSigned 
+# (or)
+Set-ExecutionPolicy Bypass -Scope Process
+#Now run the following command to install chacolatey
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+## install helm
+
+# https://helm.sh/docs/intro/install/
+choco install kubernetes-helm
+
+## install ingress controller on kubernetes
+NAMESPACE=ingress-basic
+
+helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+helm repo update
+
+helm install ingress-nginx ingress-nginx/ingress-nginx \
+  --create-namespace \
+  --namespace $NAMESPACE \
+  --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz
+
+## check the load balancer service
+kubectl get services --namespace ingress-basic -o wide -w ingress-nginx-controller

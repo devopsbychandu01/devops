@@ -4,6 +4,7 @@ metadata:
   name: static-web
   labels:
     role: demo1
+  namespace: dev
 spec:
   containers:
     - name: web
