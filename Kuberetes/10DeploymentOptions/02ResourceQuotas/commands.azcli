@@ -1,0 +1,7 @@
+kubectl create ns dev
+kubectl apply -f quotas.yaml
+kubectl describe ns dev
+
+
+kubectl apply -f limitrange.yaml
+kubectl describe ns dev
