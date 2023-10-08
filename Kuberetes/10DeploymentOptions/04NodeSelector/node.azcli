@@ -1,3 +1,5 @@
+## first increase the cluster to 2 nodes and get the aks node name.
+
 kubectl get nodes
 kubectl label nodes aks-agentpool-16069958-vmss000000 capacity=high-cpu
 kubectl label nodes aks-userpool-28075731-vmss000000 capacity=high-memory
