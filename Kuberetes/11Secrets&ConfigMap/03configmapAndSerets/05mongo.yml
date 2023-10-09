@@ -38,6 +38,7 @@ metadata:
   name: mongodb-service
   namespace: mongodb-namespace
 spec:
+  type: LoadBalancer
   selector:
     app: mongodb
   ports:

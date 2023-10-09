@@ -43,6 +43,7 @@ metadata:
   name: mongodb-express-service
   namespace: mongodb-namespace
 spec:
+  type: LoadBalancer
   selector:
     app: mongodb-express
   # type: LoadBalancer # Uncomment for external service
