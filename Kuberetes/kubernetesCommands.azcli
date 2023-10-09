@@ -1,3 +1,5 @@
+sudo hwclock -s
+
 az aks get-credentials --resource-group dev --name devcluster --overwrite-existing
 
 kubectl get nodes
