@@ -1,14 +1,14 @@
 kubectl apply -f deployments1.yml --record=true
-kubectl rollout status deployment rollout -n dev
+kubectl rollout status deployment rollout 
 kubectl apply -f services.yml
 
 ## check this in the brouser.
 kubectl get svc -n dev
 kubectl apply -f deployments2.yml --record=true
-kubectl rollout status deployment rollout -n dev
+kubectl rollout status deployment rollout 
 
-kubectl rollout history deployment rollout -n dev
+kubectl rollout history deployment rollout
 
-kubectl rollout undo deployment rollout -n dev
+kubectl rollout undo deployment rollout
 
-kubectl rollout undo deployment rollout --to-revision=2 -n dev
+kubectl rollout undo deployment rollout --to-revision=2
