@@ -13,5 +13,5 @@ spec:
   - name: azure
     azureFile:
       secretName: azure-secret
-      shareName: demoshare
+      shareName: demo
       readOnly: false
