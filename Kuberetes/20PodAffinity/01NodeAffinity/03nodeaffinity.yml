@@ -5,21 +5,14 @@ metadata:
 spec:
   affinity:
     nodeAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-        nodeSelectorTerms:
-        - matchExpressions:
-          - key: capacity
-            operator: In
-            values:
-            - high-memory
       preferredDuringSchedulingIgnoredDuringExecution:
       - weight: 1
         preference:
           matchExpressions:
-          - key: another-node-label-key
+          - key: capacity
             operator: In
             values:
-            - another-node-label-value
+            - high-memory1
   containers:
   - name: with-node-affinity
     image: registry.k8s.io/pause:2.0
