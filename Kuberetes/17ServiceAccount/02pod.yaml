@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+ name: sa-test-pod
+spec:
+ serviceAccount: sa-test
+ containers:
+  — name: nginx
+    image: nginx
+    command: ["sleep", "3600"]

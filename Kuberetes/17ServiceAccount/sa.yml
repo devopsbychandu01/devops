@@ -3,4 +3,4 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: spinnaker-service-account
-  namespace: spinnaker
+automountServiceAccountToken: true

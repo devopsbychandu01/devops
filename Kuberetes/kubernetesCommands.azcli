@@ -12,3 +12,24 @@ kubectl get pods -A -o wide
 
 
 Azure Kubernetes Service Cluster User Role
+
+az aks update -g dev -n testcluster --enable-aad --aad-admin-group-object-ids d1b01c59-64bf-4340-88de-5c873df079ad
+
+az aks update -g test -n testcluster --disable-local-accounts 
+####
+az aks install-cli
+
+
+
+
+
+azure ad integrated and non azure ad integrated clusters
+kubernetes rbac and azure ad rbac for aks clusters
+azure ad rbac for kubernetes autherization
+
+
+kubeconfig --> it contains the informaration nessassary to access aks cluster
+kubeconfig
+cluserInfo  User    contexts
+
+azure rbac --> access to azure resources

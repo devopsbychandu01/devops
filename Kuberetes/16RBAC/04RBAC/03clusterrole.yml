@@ -4,9 +4,10 @@ kind: ClusterRoleBinding
 metadata:
   name: read-secrets-global
 subjects:
-- kind: Group
-  name: manager # Name is case sensitive
-  apiGroup: rbac.authorization.k8s.io
+- kind: ServiceAccount
+  name: build-robot
+  namespace: dev
+  apiGroup: ""
 roleRef:
   kind: ClusterRole
   name: secret-reader
