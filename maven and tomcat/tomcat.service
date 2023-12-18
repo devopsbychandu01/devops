@@ -1,0 +1,23 @@
+[Unit]
+Description=Apache Tomcat Web Application Container
+After=syslog.target network.target
+
+[Service]
+Type=forking
+ExecStart=/opt/tomcat9/bin/startup.sh
+ExecStop=/opt/tomcat9/bin/shutdown.sh
+User=root
+Group=root
+
+Environment=JAVA_HOME=/opt/java8/
+Environment=CATALINA_PID=/opt/tomcat9/temp/tomcat.pid
+Environment=CATALINA_HOME=/opt/tomcat9
+Environment=CATALINA_BASE=/opt/tomcat9
+Environment=CATALINA_OPTS=
+Environment="JAVA_OPTS=-Dfile.encoding=UTF-8 -Dnet.sf.ehcache.skipUpdateCheck=true \
+-XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled \
+-XX:+UseParNewGC -Xms2g -Xmx4g"
+
+
+[Install]
+WantedBy=multi-user.target
