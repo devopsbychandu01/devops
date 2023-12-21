@@ -54,6 +54,9 @@ sudo mv sonarqube /opt/
 ## create sonar user
 adduser sonar
 
+## check the user status
+cat /etc/passwd | grep sonar
+
 ## permissions to that user
 chown sonar:sonar /opt/sonarqube -R
 
