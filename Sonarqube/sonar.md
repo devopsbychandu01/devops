@@ -3,10 +3,12 @@ apt-get update
 
 ## install java 11
 sudo apt-get install openjdk-11-jdk -y
+
 java -version
 
 #install maven
 cd /opt && wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+
 tar -xvf apache-maven-3.9.4-bin.tar.gz
 # update /etc/profile.d/maven.sh file with the following information
 vi /etc/profile.d/maven.sh
