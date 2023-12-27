@@ -18,3 +18,9 @@ docker service create --name hellowrold1 --mode global alpine ping docker.com
 docker ps
 
 docker swarm leave --force 
+
+
+
+docker stack deploy -c docker-compose.yml mydeployment
+
+## https://forums.docker.com/t/docker-swarm-deploy-container-only-to-worker-nodes-service-only-reachable-from-manager/78147/6
