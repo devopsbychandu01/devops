@@ -2,17 +2,17 @@ az login
 az account set -s "subscription1"
 az account show
 
-$rgname="dev"
-$clustername="devakscluster"
+rgname="dev"
+clustername="devcluster"
 
 ## get upgrades
 az aks get-upgrades --resource-group $rgname --name $clustername --output table
 
 ## upgrade the AKS cluster both control plan and nodes at a time
-az aks upgrade `
-    --resource-group $rgname `
-    --name $clustername `
-    --kubernetes-version 1.28.0
+az aks upgrade \
+    --resource-group $rgname \
+    --name $clustername \
+    --kubernetes-version 1.28.3
 
 ##  check the AKS cluster upgrade status.
 az aks show --resource-group $rgname --name $clustername --output table
