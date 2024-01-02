@@ -2,7 +2,7 @@ az login
 az account set -s "subscription1"
 az account show
 
-az aks get-credentials --resource-group dev --name devakscluster --overwrite-existing
+az aks get-credentials --resource-group dev --name devaks --overwrite-existing
 
 kubectl config view
 kubectl config get-contexts
@@ -13,11 +13,11 @@ kubectl get nodes -o wide
 # az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-name>
 
 # Attach using acr-resource-id
-az aks update -n devakscluster -g dev --attach-acr devacr8967
+az aks update -n devaks -g dev --attach-acr devopsbychandu
 
 
 # Detach using acr-name
-az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-name>
+az aks update -n devaks -g dev --detach-acr devopsbychandu
 
 # Detach using acr-resource-id
 az aks update -n myAKSCluster -g myResourceGroup --detach-acr <acr-resource-id>

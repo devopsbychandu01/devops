@@ -4,11 +4,10 @@ metadata:
   name: static-web
   labels:
     role: demo1
-  namespace: dev
 spec:
   containers:
     - name: web
-      image: nginx
+      image: devopsbychandu.azurecr.io/demo:v1
       ports:
         - name: web
           containerPort: 80

@@ -1,14 +1,12 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nodeapp
-  namespace: test
+  name: httpd
 spec:
   selector:
-    app: nodeapp
+    role: demo1
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
-    nodePort: 30000
+    targetPort: 80
   type: LoadBalancer
