@@ -9,8 +9,8 @@ spec:
   - ReadWriteMany
   capacity:
     storage: 4Gi
-  persistentVolumeReclaimPolicy: Delete
+  persistentVolumeReclaimPolicy: Retain
   azureFile:
     secretName: azure-secret
-    shareName: delete
+    shareName: demo
     readOnly: false
