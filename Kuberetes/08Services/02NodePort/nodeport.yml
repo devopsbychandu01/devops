@@ -6,7 +6,7 @@ spec:
   type: NodePort
   ports:
   - name: http
-    nodePort: 31704
+    nodePort: 30200
     port: 80
     targetPort: 80
   selector:
