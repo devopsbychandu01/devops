@@ -2,8 +2,9 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: customclass
-provisioner: kubernetes.io/azure-disk
+provisioner: kubernetes.io/azure-file
 reclaimPolicy: Retain
 parameters:
-  storageaccounttype: Premium_LRS
-  kind: Managed
+  skuName: Standard_LRS
+  location: eastus
+  storageAccount: devopsbychandu

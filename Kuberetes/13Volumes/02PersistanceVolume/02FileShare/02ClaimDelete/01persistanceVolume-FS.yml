@@ -9,7 +9,7 @@ spec:
   - ReadWriteMany
   capacity:
     storage: 4Gi
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Delete
   azureFile:
     secretName: azure-secret
     shareName: pvstorage
