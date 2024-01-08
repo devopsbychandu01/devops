@@ -15,7 +15,7 @@ spec:
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
-  name: web
+  name: data
 spec:
   selector:
     matchLabels:
