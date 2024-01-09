@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ResourceQuota
 metadata:
-  name: mem-cpu-demo
+  name: mem-cpu-restrict
   namespace: dev
 spec:
   hard:
