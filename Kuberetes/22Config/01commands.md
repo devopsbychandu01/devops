@@ -7,11 +7,11 @@ kubectl config view --minify
 
 kubectl config get-clusters
 kubectl config get-contexts
-kubectl config current-contexts
+kubectl config current-context
 
 ## changes the namespace on the config ##
-kubectl config set-contexts --current --namespace=dev 
-kubectl config set-contexts $(kubectl config current-contexts) --namespace=dev
+kubectl config set-context --current --namespace=dev 
+kubectl config set-context $(kubectl config current-context) --namespace=dev
 
 ## switch contexts
-kubectl config use-contexts <contextName>
+kubectl config use-context testcluster

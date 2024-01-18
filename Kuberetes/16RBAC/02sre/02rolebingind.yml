@@ -8,6 +8,6 @@ roleRef:
   kind: Role
   name: sre-user-full-access
 subjects:
-- kind: Group
-  namespace: sre
-  name: 0758247e-c205-454a-bc16-b904d24365d1
+- kind: User
+  apiGroup: rbac.authorization.k8s.io
+  name: sanath@devopsbychandu3.onmicrosoft.com

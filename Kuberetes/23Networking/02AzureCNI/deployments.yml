@@ -12,6 +12,7 @@ spec:
       labels:
         app: nodeapp
     spec:
+      serviceAccount: demo
       containers:
       - image: kammana/nodeapp:v2
         name: nodeapp
