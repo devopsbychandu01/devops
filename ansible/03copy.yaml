@@ -1,0 +1,11 @@
+---
+- name: Update db servers
+  hosts: webserver
+  remote_user: root
+  become: true
+  
+  tasks:
+  - name: copyfile
+    copy:
+      src: /home/devops/ansible.yaml
+      dest: /opt

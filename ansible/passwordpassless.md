@@ -41,7 +41,7 @@ edit authorized_keys and update second server public keys.
 
 ##Ansible install
 apt-get update
-apt-get install ansible
+apt-get install ansible -y
 ansible --version
 which ansible
 
