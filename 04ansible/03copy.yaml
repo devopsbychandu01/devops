@@ -7,5 +7,5 @@
   tasks:
   - name: copyfile
     copy:
-      src: /home/devops/ansible.yaml
+      src: /home/devops/apache.yaml
       dest: /opt
