@@ -19,6 +19,10 @@ export PATH=$M3_HOME/bin:$PATH
 source /etc/profile.d/maven.sh
 mvn --version
 
+(or)
+apt update
+apt install maven  -y
+
 ## Install and Configure PostgreSQL
 
 sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main"   /etc/apt/sources.list.d/pgdg.list'

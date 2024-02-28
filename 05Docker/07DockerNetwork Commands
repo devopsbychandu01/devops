@@ -16,7 +16,10 @@ docker network create mynetwork --subnet 10.1.0.0/27
 docker network ls
 
 ## run a container on a specific network ##
-docker run -itd -p 1234:80 --name mynetwork1 --network mynetwork app:v1
+docker run -itd -p 1234:80 --name mynetwork1 --network mynetwork1 app:v1
+
+docker run -itd -p 1235:80 --name mynetwork --network mynetwork app:v1
+
 docker run -itd -p 123:80 --name mynetwork2 --network mynetwork app:v1
 docker run -itd --name demo3 --network mynetwork alpine sh
 docker run -itd --name demo4 --network mynetwork alpine sh

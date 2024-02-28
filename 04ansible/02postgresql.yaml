@@ -5,6 +5,9 @@
   become: true
   
   tasks:
+  - name: update
+    apt:
+    
   - name: Ensure postgresql is at the latest version
     ansible.builtin.yum:
       name: postgresql
