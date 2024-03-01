@@ -5,7 +5,7 @@ docker swarm init
 docker swarm join-token manager
 
 ### worker join
-docker swarm join --token SWMTKN-1-3sbv1kso2s5luypmipre34c477yntep33tgxpvgyoo9tpr9rxd-c556m3y6u5f34hg0ha18dysr1 10.0.0.4:2377
+docker swarm join --token SWMTKN-1-3r5jeu5iu1uyc0foa9nzupmjhoy2szuvivkshzs75ea1yqbz6r-8pa6g41qskimyjssbt1nwfr6q 10.0.0.4:2377
 
 docker node ls
 

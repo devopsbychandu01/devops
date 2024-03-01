@@ -12,7 +12,7 @@ az aks get-upgrades --resource-group $rgname --name $clustername --output table
 az aks upgrade \
     --resource-group $rgname \
     --name $clustername \
-    --kubernetes-version 1.28.3
+    --kubernetes-version 1.28.5
 
 ##  check the AKS cluster upgrade status.
 az aks show --resource-group $rgname --name $clustername --output table

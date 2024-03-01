@@ -2,7 +2,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: nodeapp
-  namespace: test
+  labels:
+    app: nodeapp
 spec:
   selector:
     app: nodeapp

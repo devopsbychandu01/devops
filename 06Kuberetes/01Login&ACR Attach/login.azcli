@@ -1,5 +1,5 @@
 az login
-az account set -s "subscription1"
+az account set -s "pay-as-you-go"
 az account show
 
 az aks get-credentials --resource-group dev --name devaks --overwrite-existing
@@ -12,7 +12,7 @@ kubectl get nodes -o wide
 # Attach using acr-name
 # az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-name>
 
-# Attach using acr-resource-id
+# Attach using acr-resource
 az aks update -n devaks -g dev --attach-acr devopsbychandu
 
 

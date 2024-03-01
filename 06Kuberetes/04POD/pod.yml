@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: web
-      image: devopsbychandu.azurecr.io/demo:v1
+      image: nginx
       ports:
         - name: web
           containerPort: 80
