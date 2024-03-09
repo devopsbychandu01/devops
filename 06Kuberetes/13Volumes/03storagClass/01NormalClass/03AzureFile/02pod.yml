@@ -19,4 +19,4 @@ spec:
   volumes:
     - name: volume
       persistentVolumeClaim:
-        claimName: azure-managed-disk
+        claimName: azure-storage-disk

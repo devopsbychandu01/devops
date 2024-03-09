@@ -13,5 +13,5 @@ spec:
   volumes:
     - name: foo
       secret:
-        secretName: mysecret
+        secretName: mongodb-secret
         optional: true
