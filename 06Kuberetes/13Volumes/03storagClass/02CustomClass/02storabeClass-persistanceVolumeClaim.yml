@@ -6,6 +6,7 @@ spec:
   accessModes:
   - ReadWriteMany
   storageClassName: azurefile-retain
+  storageClassName: managed-premium-retain
   resources:
     requests:
       storage: 5Gi

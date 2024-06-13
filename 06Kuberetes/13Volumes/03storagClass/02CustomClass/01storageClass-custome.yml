@@ -8,3 +8,10 @@ parameters:
   skuName: Standard_LRS
   location: eastus
   storageAccount: azure_storage_account_name
+  name: managed-premium-retain
+provisioner: disk.csi.azure.com
+parameters:
+  skuName: Premium_ZRS
+reclaimPolicy: Retain
+volumeBindingMode: WaitForFirstConsumer
+allowVolumeExpansion: true
