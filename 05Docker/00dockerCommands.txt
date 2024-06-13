@@ -28,8 +28,8 @@ CMD ["apache2ctl", "-D", "FOREGROUND"]
 
 docker build -t apache2:v1 .
 
-docker run -it 2c121712765a
-docker run -itd 2c121712765a
+docker run -it fd6db522f868
+docker run -itd fd6db522f868
 docker ps
 docker ps -a
 docker ps -qa

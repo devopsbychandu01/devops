@@ -1,0 +1,8 @@
+---
+- name: Configure Windows for Large Business
+  hosts: win
+  tasks:
+    - name: Ensure IIS is installed
+      ansible.windows.win_feature:
+        name: Web-Server
+        state: present  

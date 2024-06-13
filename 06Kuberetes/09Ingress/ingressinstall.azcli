@@ -34,4 +34,4 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
   --set controller.service.annotations."service\.beta\.kubernetes\.io/azure-load-balancer-health-probe-request-path"=/healthz
 
 ## check the load balancer service
-kubectl get services --namespace ingress-basic -o wide -w ingress-nginx-controller
+kubectl get services --namespace ingress-basic -o wide ingress-nginx-controller

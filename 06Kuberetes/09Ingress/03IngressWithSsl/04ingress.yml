@@ -11,7 +11,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - devopsbychandu.eastus.cloudapp.azure.com
+    - devopsbychandu123.eastus.cloudapp.azure.com
     secretName: mysecret
   rules:
   - http:

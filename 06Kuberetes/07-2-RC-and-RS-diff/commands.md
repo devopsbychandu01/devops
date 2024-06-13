@@ -11,6 +11,7 @@ kubectl delete pods static-web2
 kubectl apply -f 01pod.yaml
 kubectl get pods --show-labels
 kubectl apply -f 03RS.yaml
+kubectl get rs
 kubectl delete rs nginxrs
 kubectl delete pods static-web1
 

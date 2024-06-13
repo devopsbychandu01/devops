@@ -41,3 +41,7 @@ test.txt
 
 
 scp test.jar username@<ip>:/opt/test.jar
+
+
+
+https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-deploy-a-JAR-file-to-Tomcat-the-right-way#:~:text=Tomcat%20JAR%20deployment%20options&text=There%20are%20three%20recommended%20options,files%20by%20editing%20Tomcat's%20common.

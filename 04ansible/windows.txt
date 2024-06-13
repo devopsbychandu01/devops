@@ -1,0 +1,5 @@
+sudo apt-get update
+sudo apt-get install ansible
+ansible-galaxy collection install ansible.windows
+apt install python3-pip
+pip3 install "pywinrm>=0.3.0"

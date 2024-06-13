@@ -2,4 +2,4 @@
 
 kubectl get nodes
 # kubectl label nodes aks-agentpool-31792017-vmss000000 capacity=high-cpu
-kubectl label nodes aks-agentpool-31792017-vmss000000 capacity=high-memory
+kubectl label nodes aks-agentpool-12278687-vmss000000 capacity=high-memory

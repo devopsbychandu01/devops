@@ -2,7 +2,7 @@
 apt-get update
 
 ## install java 11
-sudo apt-get install openjdk-11-jdk -y
+sudo apt-get install openjdk-17-jdk -y
 
 java -version
 
@@ -54,7 +54,7 @@ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.6.1.595
 unzip sonarqube-9.6.1.59531.zip
 
 ## move the file to /opt
-sudo mv sonarqube-9.6.1.59531 sonarqube
+sudo mv sonarqube-10.5.1.90531 sonarqube
 sudo mv sonarqube /opt/
 
 ## create sonar user

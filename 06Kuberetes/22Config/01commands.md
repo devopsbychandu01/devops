@@ -14,4 +14,4 @@ kubectl config set-context --current --namespace=dev
 kubectl config set-context $(kubectl config current-context) --namespace=dev
 
 ## switch contexts
-kubectl config use-context testcluster
+kubectl config use-context devakscluster

@@ -15,6 +15,8 @@ docker network inspect <networkID>
 docker network create mynetwork --subnet 10.1.0.0/27
 docker network ls
 
+docker network create mynetwork1 --subnet 10.2.0.0/24
+
 ## run a container on a specific network ##
 docker run -itd -p 1234:80 --name mynetwork1 --network mynetwork1 app:v1
 

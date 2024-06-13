@@ -1,1 +1,0 @@
-kubectl create secret generic azure-secret --from-literal=azurestorageaccountname=devopsbychandu --from-literal=azurestorageaccountkey=lSsdlbkxvuXapVUeLL35SJCSQIAYkS9qE74ouyMVv/ALMoMy7yy4Sos96UND8vUX03uh+vjMwa2u+AStvXr5Yw==

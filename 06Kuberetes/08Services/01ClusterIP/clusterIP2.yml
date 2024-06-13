@@ -4,7 +4,7 @@ metadata:
   name: azure-vote-back
 spec:
   ports:
-  - port: 6379
+  - port: 80
     protocol: TCP
   selector:
     app: azure-vote-back
