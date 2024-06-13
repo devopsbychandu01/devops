@@ -1,0 +1,8 @@
+# spinnaker-service-account.yml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dev
+  namespace: dev
+  annotations:
+    kubernetes.io/enforce-mountable-secrets: "true"

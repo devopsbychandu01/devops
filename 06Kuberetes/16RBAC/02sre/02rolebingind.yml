@@ -10,4 +10,4 @@ roleRef:
 subjects:
 - kind: User
   apiGroup: rbac.authorization.k8s.io
-  name: sanath@devopsbychandu3.onmicrosoft.com
+  name: sarath@devopsbychandu3.onmicrosoft.com

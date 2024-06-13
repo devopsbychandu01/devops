@@ -13,3 +13,4 @@ spec:
         - name: web
           containerPort: 80
           protocol: TCP
+  serviceAccountName: dev

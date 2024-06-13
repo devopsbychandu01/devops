@@ -1,32 +1,13 @@
+kubectl apply -f 01pod.yml
 
-
-## https://docs.armory.io/continuous-deployment/armory-admin/manual-service-account/
-
-#If you are on K8s version 1.24
-#The serviceaccount won't create the secret automatically.
-
-
-
-
-
-SERVICE_ACCOUNT_NAME=spinnaker-service-account
-CONTEXT=$(kubectl config current-context)
-NAMESPACE=dev
-NEW_CONTEXT=spinnaker
-KUBECONFIG_FILE="kubeconfig-sa"
-
-kubectl apply -f 03secret.yaml
-
-SECRET_NAME=$(kubectl get sa ${SERVICE_ACCOUNT_NAME} \
-  --namespace="${NAMESPACE}" -o json | jq -r .secrets[].name)
-
-
-kubectl create sa sa-test 
-kubectl get sa/secret 
-kubectl create -f 02pod.yml 
-kubectl exec -it sa-test-pod bash
-cat /run/secrets/kubernetes.io/serviceaccount/token
-kubectl create -f 03secret.yaml
-k get sa,secret
-k describe secret sa-secret
-kubectl create token sa-test
+kubectl create ns dev
+kubectl apply -f 02secret.yaml
+kubectl apply -f 03sa.yml
+kubectl apply -f 04pod.yml
+kubectl get pods -n dev
+kubectl exec -it static-web bash -n dev 
+TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+echo $TOKEN
+curl -sSk -H "Authorization: Bearer $TOKEN" https://kubernetes.default:443/api
+curl -sSk -H "Authorization: Bearer $TOKEN" https://kubernetes.default:443/api/v1
+curl -sSk -H "Authorization: Bearer $TOKEN" https://kubernetes.default:443/api/v1/namespaces/default/pods/static-web
