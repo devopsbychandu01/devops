@@ -8,16 +8,20 @@ docker swarm join-token manager
 docker swarm join --token SWMTKN-1-2uyyxl7anaqjc5gjqxrhc2vruuw1t6rmmfbcjnnxvpitbhd2ar-b7xmgk9j1224drceen3ztlhwd 10.0.0.4:2377
 
 docker node ls
+docker swarm leave --force 
 
-docker service create --name helloworld alpine ping docker.com
+<!-- docker service create --name helloworld alpine ping docker.com
 docker service ls
 docker ps
 
 
 docker service create --name hellowrold1 --mode global alpine ping docker.com
-docker ps
+docker ps -->
 
-docker swarm leave --force 
+docker-compose up -d
+docker-compose down
+
+
 
 
 

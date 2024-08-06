@@ -17,6 +17,10 @@ docker network ls
 
 docker network create mynetwork1 --subnet 10.2.0.0/24
 
+docker run -itd -p 1234:80 --name firstcontainer --network mynetwork nginx
+
+docker run -itd -p 1235:80 --name secondcontainer --network mynetwork nginx
+
 ## run a container on a specific network ##
 docker run -itd -p 1234:80 --name mynetwork1 --network mynetwork1 app:v1
 

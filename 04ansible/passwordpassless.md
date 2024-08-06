@@ -39,6 +39,14 @@ past the puclikey to the autherized keys.
 
 ##Ansible install
 apt-get update
+<!-- python3 --version
+<!-- sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt update
+sudo apt install python3.11
+python3.11 --version -->
+<!-- apt install python3.11-pip
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py --> -->
+
 apt-get install ansible -y
 ansible --version
 which ansible
@@ -61,6 +69,24 @@ ansible-playbook <file>
 
 
 ### ansible windows
+
+
+New-LocalUser -Name ansible -Password (Read-Host -AsSecureString) -PasswordNeverExpires -AccountNeverExpires -UserMayNotChangePassword
+
+Get-LocalGroup
+
+Add-LocalGroupMember -Group Administrators -Member ansible
+
+
+
+
+
+
+
+
+
+
+
 
 # host machine
 apt install python3-pip -y

@@ -1,8 +1,19 @@
+apt update
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 sudo apt-get install openjdk-8-jdk
 sudo update-alternatives --config java
 sudo update-alternatives --config javac
+apt install maven -y
+java -version
+mvn --version
+
+mvn archetype:generate
+mvn compile
+mvn test
+mvn package
+mvn install
+
 
 <!-- git clone https://github.com/harikrishnacheruku866/hello-world.git -->
 git clone https://github.com/devopsbychandu01/Tomcat-maven-Demo.git
