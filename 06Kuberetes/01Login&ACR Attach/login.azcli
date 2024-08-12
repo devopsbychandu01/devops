@@ -13,7 +13,7 @@ kubectl get nodes -o wide
 # az aks update -n myAKSCluster -g myResourceGroup --attach-acr <acr-name>
 
 # Attach using acr-resource
-az aks update -n devcluster -g dev --attach-acr devopsbychandu1
+az aks update -n devcluster -g develop --attach-acr devopsbychandu
 
 
 # Detach using acr-name

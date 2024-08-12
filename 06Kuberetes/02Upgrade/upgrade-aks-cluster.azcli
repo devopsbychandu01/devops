@@ -2,7 +2,7 @@ az login
 az account set -s "subscription1"
 az account show
 
-rgname="dev"
+rgname="develop"
 clustername="devcluster"
 
 ## get upgrades
@@ -12,7 +12,7 @@ az aks get-upgrades --resource-group $rgname --name $clustername --output table
 az aks upgrade \
     --resource-group $rgname \
     --name $clustername \
-    --kubernetes-version 1.29.4
+    --kubernetes-version 1.29.7
 
 ##  check the AKS cluster upgrade status.
 az aks show --resource-group $rgname --name $clustername --output table

@@ -2,6 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: httpd
+  namespace: dev
 spec:
   selector:
     role: demo1

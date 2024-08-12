@@ -2,7 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: hello-world-ingress
-  namespace: ingress-basic
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
@@ -11,7 +10,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - devopsbychandu123.eastus.cloudapp.azure.com
+      - devopsbychandu123.eastus.cloudapp.azure.com
     secretName: mysecret
   rules:
   - http:
